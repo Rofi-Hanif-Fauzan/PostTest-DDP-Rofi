@@ -1,0 +1,34 @@
+# Nama: Rofi Hanif Fauzan
+# Nim: 2309116026
+
+pengguna = {}
+opsi = ""
+
+def awal():
+    opsi = str(input("Login atau Register? (log/reg): "))
+    if opsi == "log":
+        pengguna_lama()
+    elif opsi == "reg":
+        pengguna_baru()
+
+def pengguna_baru():
+    nama1 = input("Masukkan nama:")
+    if nama1 in pengguna:
+        print("Maaf nama sudah terpakai")
+    else:
+        nim1 = input("Masukkan NIM: ")
+        pass1 = input("Masukkan Password: ")
+        pengguna[nama1] =nim1,pass1
+        print("Pengguna baru telah dibuat")
+
+def pengguna_lama():
+    nama2 = input("Masukkan nama: ")
+    nim2 = input("Masukkan NIM:")
+    pass2 = input("Masukkan password: ")
+    if nama2 in pengguna and pengguna[nama2] != pass2:
+        print("Login berhasil!")
+    else:
+        print("Oops mungkin ada yang salah!")
+
+while True:
+    awal()
